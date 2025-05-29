@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JSON to XAML Converter</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js">
+    </script>
+    <script src="script.js">
+    </script>
+</head>
+<body>
+    <h1>Material Theme Viewer</h1>
+    <div class="info">
+        This tool is a <strong>converter for WPF</strong> themes only.<br />
+        It does <em>not</em> claim any rights or ownership over the Material Design themes.<br />
+        For creating and exporting Material themes, please visit the official Material Theme Builder: 
+        <a href="https://material-foundation.github.io/material-theme-builder/" target="_blank" rel="noopener noreferrer">
+        material-theme-builder
+        </a>
+    </div>
+    <h2>Upload Material Theme JSON</h2>
+    <input type="file" id="fileInput" accept=".json" />
+    <button onclick="generateZip()">Generate XAML ZIP</button>
+    <div id="output"></div>
+</body>
+</html>
