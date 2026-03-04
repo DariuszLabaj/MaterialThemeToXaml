@@ -706,3 +706,81 @@ p
 {
     background: var(--md-primary);
 }
+
+/* =========================================================
+   File input (Material style)
+   ========================================================= */
+
+.md-file-field
+{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.md-file-field label
+{
+    font-size: 12px;
+    color: var(--md-on-surface-variant);
+}
+
+.md-file-field__control
+{
+    display: flex;
+    align-items: stretch;
+    gap: 8px;
+}
+
+.md-file-input
+{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.md-file-display
+{
+    flex: 1;
+
+    height: 40px;
+    padding: 0 12px;
+
+    display: flex;
+    align-items: center;
+
+    border-radius: var(--md-radius-small);
+    border: 1px solid var(--md-outline);
+
+    background: var(--md-surface);
+    color: var(--md-on-surface);
+
+    font-size: var(--md-body-medium);
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    transition:
+        border var(--md-motion-fast),
+        box-shadow var(--md-motion-fast);
+}
+
+.md-file-field__control:focus-within .md-file-display
+{
+    border-color: var(--md-primary);
+    box-shadow: 0 0 0 1px var(--md-primary);
+}
+
+.md-file-button
+{
+    flex-shrink: 0;
+}
+
+/* disabled state */
+
+.md-file-input:disabled ~ .md-file-display
+{
+    opacity: 0.6;
+}
