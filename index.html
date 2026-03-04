@@ -5,25 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>JSON to XAML Converter</title>
     <link rel="stylesheet" href="css/material.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/styles.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js">
-    </script>
-    <script src="script.js">
     </script>
 </head>
 <body>
-    <h1>Material Theme Viewer</h1>
-    <div class="info">
-        This tool is a <strong>converter for WPF</strong> themes only.<br />
-        It does <em>not</em> claim any rights or ownership over the Material Design themes.<br />
-        For creating and exporting Material themes, please visit the official Material Theme Builder: 
-        <a href="https://material-foundation.github.io/material-theme-builder/" target="_blank" rel="noopener noreferrer">
-        material-theme-builder
+  <header class="md-app-bar">
+    <div class="md-app-bar__title">Material Theme Viewer</div>
+  </header>
+  <main clsss="md-container">
+    <h1></h1>
+    <div class="md-grid" style="grid-template-columns: 1fr; margin: 1rem">
+      <div class="md-card">
+        <p>
+          This tool is a <strong>converter for WPF</strong> themes only.<br />
+          It does <em>not</em> claim any rights or ownership over the Material Design themes.<br />
+          For creating and exporting Material themes, please visit the official Material Theme Builder: 
+          <a href="https://material-foundation.github.io/material-theme-builder/" target="_blank" rel="noopener noreferrer">
+          material-theme-builder
         </a>
+        </p>
+      </div>
+      <div class="md-card">
+        <div class="md-card__title">Upload Material Theme JSON</div>
+        <div class="md-file-field">
+          <label for="fileInput">Configuration file</label>
+          <div class="md-file-field__control">
+            <input class="md-file-input" type="file" id="fileInput" accept=".json" />
+            <div class="md-file-display" id="fileName">
+              No file selected
+            </div>
+            <label for="fileInput" class="md-button md-button--outlined md-file-button">
+                Browse
+            </label>
+          </div>
+        </div>
+        <h2></h2>
+        <button class="md-button md-button--filled" onclick="generateZip()">Generate XAML ZIP</button>
+      </div>
+      <div class="md-card">
+        <div id="output"></div>
+      </div>
     </div>
-    <h2>Upload Material Theme JSON</h2>
-    <input type="file" id="fileInput" accept=".json" />
-    <button onclick="generateZip()">Generate XAML ZIP</button>
-    <div id="output"></div>
+  </main>
+  <div id="app-snackbar" class="md-snackbar">
+    <div class="md-snackbar__message">Message</div>
+  </div>
+  <script src="script.js">
+    </script>
 </body>
 </html>
