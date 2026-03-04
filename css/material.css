@@ -784,3 +784,69 @@ p
 {
     opacity: 0.6;
 }
+
+/* =========================================================
+   Select / Combo box
+   ========================================================= */
+
+.md-select-field
+{
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.md-select-field label
+{
+    font-size: 12px;
+    color: var(--md-on-surface-variant);
+}
+
+.md-select
+{
+    appearance: none;
+
+    height: 40px;
+    padding: 0 36px 0 12px;
+
+    border-radius: var(--md-radius-small);
+    border: 1px solid var(--md-outline);
+
+    background: var(--md-surface);
+    color: var(--md-on-surface);
+
+    font-size: var(--md-body-medium);
+    font-family: inherit;
+
+    outline: none;
+    cursor: pointer;
+
+    transition:
+        border var(--md-motion-fast),
+        box-shadow var(--md-motion-fast);
+}
+
+.md-select-field
+{
+    position: relative;
+}
+
+/* strzałka */
+
+.md-select-field::after
+{
+    content: "▾";
+    position: absolute;
+    right: 12px;
+    top: 18px;
+
+    pointer-events: none;
+    font-size: 2rem;
+    color: var(--md-on-surface-variant);
+}
+
+.md-select:focus
+{
+    border-color: var(--md-primary);
+    box-shadow: 0 0 0 1px var(--md-primary);
+}
