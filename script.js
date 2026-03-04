@@ -1,11 +1,13 @@
 let materialThemeJson = null;
+const snackbar = document.getElementById("app-snackbar");
 
     document.addEventListener("DOMContentLoaded", function () {
     const fileInput = document.getElementById('fileInput');
     const previewElement = document.getElementById("jsonPreview");
 
     if (!fileInput) {
-      alert("File input element not found. Check your HTML.");
+      //alert("File input element not found. Check your HTML.");
+      showSnackbar("File input element not found. Check your HTML.");
       return;
     }
 
@@ -13,7 +15,8 @@ let materialThemeJson = null;
       const file = event.target.files[0];
 
       if (!file) {
-        alert("No file selected.");
+        //alert("No file selected.");
+        showSnackbar("No file selected.");
         return;
       }
 
@@ -22,15 +25,18 @@ let materialThemeJson = null;
       reader.onload = (e) => {
         try {
           materialThemeJson = JSON.parse(e.target.result);
-          alert("JSON loaded successfully.");
+          //alert("JSON loaded successfully.");
+          showSnackbar("JSON loaded successfully.");
           renderTheme(materialThemeJson);
         } catch (err) {
-          alert("Failed to parse JSON.");
+          //alert("Failed to parse JSON.");
+          showSnackbar("Failed to parse JSON.");
         }
       };
 
       reader.onerror = () => {
-        alert("Error reading file.");
+        //alert("Error reading file.");
+        showSnackbar("Error reading file.");
       };
 
       reader.readAsText(file);
@@ -56,7 +62,8 @@ let materialThemeJson = null;
 
     async function generateZip() {
       if (!materialThemeJson) {
-        alert("Please upload a valid Material Theme JSON first.");
+        //alert("Please upload a valid Material Theme JSON first.");
+        showSnackbar("Please upload a valid Material Theme JSON first.");
         return;
       }
 
@@ -134,4 +141,15 @@ function createSwatch(label, hex) {
 
 function capitalize(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+function showSnackbar(message)
+{
+    snackbar.querySelector(".md-snackbar__message").textContent = message;
+    snackbar.classList.add("md-snackbar--show");
+
+    setTimeout(() =>
+    {
+        snackbar.classList.remove("md-snackbar--show");
+    }, 4000);
 }
