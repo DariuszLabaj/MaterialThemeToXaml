@@ -850,3 +850,56 @@ p
     border-color: var(--md-primary);
     box-shadow: 0 0 0 1px var(--md-primary);
 }
+
+
+/* =========================================================
+   Data table (Material style)
+   ========================================================= */
+
+.md-table
+{
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--md-surface);
+    color: var(--md-on-surface);
+
+    font-size: var(--md-body-medium);
+}
+
+.md-table thead th
+{
+    text-align: left;
+    font-weight: 500;
+
+    padding: 10px 12px;
+
+    color: var(--md-on-surface-variant);
+
+    border-bottom: 1px solid var(--md-outline);
+}
+
+.md-table tbody td
+{
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--md-surface-variant);
+}
+
+.md-table tbody tr:hover
+{
+    background: var(--md-surface-variant);
+}
+
+/* numeric / right aligned */
+
+.md-table .right
+{
+    text-align: right;
+    font-variant-numeric: tabular-nums;
+}
+
+/* small helper when table is inside card */
+
+.md-card .md-table
+{
+    margin-top: 8px;
+}
