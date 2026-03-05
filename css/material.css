@@ -903,3 +903,68 @@ p
 {
     margin-top: 8px;
 }
+
+.md-textarea
+{
+    padding: 0 12px;
+
+    border-radius: var(--md-radius-small);
+    border: 1px solid var(--md-outline);
+    outline: none;
+
+    font-size: var(--md-body-medium);
+
+    transition: border var(--md-motion-fast), box-shadow var(--md-motion-fast);
+
+    resize: vertical;
+    min-height: 90px;
+}
+
+.md-field__label{
+  font-size: 12px;
+  color: var(--md-on-surface-variant);
+}
+
+.md-form-actions
+{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 8px;
+}
+
+.md-fieldset
+{
+    border: 1px solid var(--md-outline, #ccc);
+    border-radius: 12px;
+    padding: 12px 12px 10px;
+}
+
+.md-fieldset > legend
+{
+    padding: 0 6px;
+    font-size: 0.8rem;
+    color: var(--md-on-surface-variant, #666);
+}
+
+.md-checkbox-list
+{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 6px 12px;
+    margin-top: 4px;
+}
+
+.md-checkbox-list label
+{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.md-checkbox-list input[type="checkbox"]
+{
+    accent-color: var(--md-primary);
+}
