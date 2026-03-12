@@ -968,3 +968,54 @@ p
 {
     accent-color: var(--md-primary);
 }
+
+/* =========================================================
+   Tick-box (ładny checkbox do zadań)
+   ========================================================= */
+
+.md-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 14px;
+}
+
+.md-check input {
+    display: none;
+}
+
+.md-check__box {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--md-primary);
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+/* Ptaszek */
+.md-check__box::after {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 12px;
+    border-right: 2px solid var(--md-surface);
+    border-bottom: 2px solid var(--md-surface);
+    transform: rotate(45deg) scale(0);
+    bottom: 4px;
+    left: 5px;
+    transition: transform 0.2s ease-out;
+}
+
+/* Zaznaczone */
+.md-check input:checked + .md-check__box {
+    background: var(--md-primary);
+    border-color: var(--md-primary);
+}
+
+.md-check input:checked + .md-check__box::after {
+    transform: rotate(45deg) scale(1);
+}
